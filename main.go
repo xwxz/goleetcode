@@ -29,7 +29,13 @@ func testAddTwoNumbers() {
 	list3.Print()
 }
 
+func testLSWRC(s string) {
+	len, substring := algorithm.LongestSubstringWithoutRepeatingCharacters(s)
+	fmt.Printf("%s:%d\n", substring, len)
+}
+
 func main() {
 	testTwoSum()
 	testAddTwoNumbers()
+	testLSWRC("Notethattheanswer")
 }
