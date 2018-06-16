@@ -34,8 +34,16 @@ func testLSWRC(s string) {
 	fmt.Printf("%s:%d\n", substring, len)
 }
 
+func testFindMedian()  {
+	var a = []int{1,4,6}
+	var b = []int{2,5}
+	c := algorithm.MedianOfTwoSortedArrays(a,b)
+	fmt.Println(c)
+}
+
 func main() {
 	testTwoSum()
 	testAddTwoNumbers()
 	testLSWRC("Notethattheanswer")
+	testFindMedian()
 }
