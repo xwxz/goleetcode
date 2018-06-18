@@ -29,21 +29,26 @@ func testAddTwoNumbers() {
 	list3.Print()
 }
 
-func testLSWRC(s string) {
-	len, substring := algorithm.LongestSubstringWithoutRepeatingCharacters(s)
-	fmt.Printf("%s:%d\n", substring, len)
+func testLSWRC() {
+	l, substring := algorithm.LongestSubstringWithoutRepeatingCharacters("Notethattheanswer")
+	fmt.Printf("%s:%d\n", substring, l)
 }
 
-func testFindMedian()  {
-	var a = []int{1,4,6}
-	var b = []int{2,5}
-	c := algorithm.MedianOfTwoSortedArrays(a,b)
+func testFindMedian() {
+	var a = []int{1, 4, 6}
+	var b = []int{2, 5}
+	c := algorithm.MedianOfTwoSortedArrays(a, b)
 	fmt.Println(c)
+}
+
+func testFindLongetstPalindrom() {
+	fmt.Println(algorithm.FindLongestPalindromicSubstring("abcbcbd"))
 }
 
 func main() {
 	testTwoSum()
 	testAddTwoNumbers()
-	testLSWRC("Notethattheanswer")
+	testLSWRC()
 	testFindMedian()
+	testFindLongetstPalindrom()
 }
