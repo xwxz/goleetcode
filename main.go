@@ -45,10 +45,15 @@ func testFindLongetstPalindrom() {
 	fmt.Println(algorithm.FindLongestPalindromicSubstring("abcbcbd"))
 }
 
+func testFindZigZagConversion() {
+	fmt.Printf("%s", algorithm.ZigZagConversion("PAYPALISHIRING", 4))
+}
+
 func main() {
 	testTwoSum()
 	testAddTwoNumbers()
 	testLSWRC()
 	testFindMedian()
 	testFindLongetstPalindrom()
+	testFindZigZagConversion()
 }
