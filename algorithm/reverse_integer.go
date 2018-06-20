@@ -31,5 +31,5 @@ func ReverseInteger(x int32) int32 {
 		y = newRet
 		x = x / 10
 	}
-	return int32(y)
+	return y
 }
