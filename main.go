@@ -4,6 +4,7 @@ import (
 	"github.com/xwxz/goleetcodes/structure"
 	"github.com/xwxz/goleetcodes/algorithm"
 	"fmt"
+	"math"
 )
 
 func testTwoSum() {
@@ -49,6 +50,13 @@ func testFindZigZagConversion() {
 	fmt.Printf("%s", algorithm.ZigZagConversion("PAYPALISHIRING", 4))
 }
 
+func testReverseInteger() {
+	fmt.Println(algorithm.ReverseInteger(math.MaxInt32))
+	fmt.Println(algorithm.ReverseInteger(math.MinInt32))
+	fmt.Println(algorithm.ReverseInteger(-234))
+	fmt.Println(algorithm.ReverseInteger(230))
+}
+
 func main() {
 	testTwoSum()
 	testAddTwoNumbers()
@@ -56,4 +64,5 @@ func main() {
 	testFindMedian()
 	testFindLongetstPalindrom()
 	testFindZigZagConversion()
+	testReverseInteger()
 }
