@@ -57,6 +57,16 @@ func testReverseInteger() {
 	fmt.Println(algorithm.ReverseInteger(230))
 }
 
+func testAtoi()  {
+	fmt.Println(algorithm.Atoi("   -42"))
+	fmt.Println(algorithm.Atoi("4193 with words"))
+	fmt.Println(algorithm.Atoi("words and 987"))
+	fmt.Println(algorithm.Atoi("-91283472332"))
+	fmt.Println(algorithm.Atoi("3787791283472332"))
+	fmt.Println(algorithm.Atoi("   "))
+	fmt.Println(algorithm.Atoi("34 45 6l34   "))
+}
+
 func main() {
 	testTwoSum()
 	testAddTwoNumbers()
@@ -65,4 +75,5 @@ func main() {
 	testFindLongetstPalindrom()
 	testFindZigZagConversion()
 	testReverseInteger()
+	testAtoi()
 }
