@@ -65,6 +65,14 @@ func testAtoi()  {
 	fmt.Println(algorithm.Atoi("3787791283472332"))
 	fmt.Println(algorithm.Atoi("   "))
 	fmt.Println(algorithm.Atoi("34 45 6l34   "))
+	fmt.Println(algorithm.Atoi("2147483648"))
+	fmt.Println(algorithm.Atoi("-91283472332"))
+	fmt.Println(algorithm.Atoi("4193 with words"))
+	fmt.Println(algorithm.Atoi("  0000000000012345678"))
+	fmt.Println(algorithm.Atoi(" 0 123"))
+	fmt.Println(algorithm.Atoi(" +0 123"))
+	fmt.Println(algorithm.Atoi("-000000000000001"))
+	fmt.Println(algorithm.Atoi("2147483648"))
 }
 
 func main() {
@@ -77,3 +85,4 @@ func main() {
 	testReverseInteger()
 	testAtoi()
 }
+

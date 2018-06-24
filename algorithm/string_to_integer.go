@@ -1,9 +1,5 @@
 package algorithm
 
-import (
-	"math"
-)
-
 /**
 
 在找到第一个非空字符之前，需要移除掉字符串中的空格字符。如果第一个非空字符是正号或负号，选取该符号，并将其与后面尽可能多的连续的数字组合起来，这部分字符即为整数的值。如果第一个非空字符是数字，则直接将其与之后连续的数字字符组合起来，形成整数。
@@ -37,35 +33,30 @@ import (
 解析：
 将字符串转换为byte数组，依次循环比较各字符与ascii码值，进行乘法累加，在乘法计算过程中需要判断是否溢出，溢出则根据正负判断返回最大值还是最小值
  */
-func Atoi(str string) int32 {
+func Atoi(str string) int {
 	if len(str) == 0 {
 		return 0
 	}
 	var ret int32
-	isPositiveNumber := true
+	var flagChecked, hasFindNotEmptyChar bool
+	var flag byte
 	for i := 0; i < len(str); i++ {
-		a := str[i]
-		if a == byte(' ') {
+		ch := str[i]
+		if !hasFindNotEmptyChar && ch == byte(' ') {
 			continue
 		}
-		if ret == 0 {
-			if a == byte('-') {
-				isPositiveNumber = false
-			} else if a == byte('+') {
-				isPositiveNumber = true
-			} else if a > byte('0') && a <= byte('9') {
-				ret = int32(a - byte(0))
-			} else {
-				return 0
-			}
+		hasFindNotEmptyChar = true
+		if !flagChecked && ( ch == byte('+') || ch == byte('-') ) {
+			flag = ch
 		} else {
-			if a > byte('0') && a <= byte('9') {
-				newRet := ret*10 + int32(a-byte('0'))
-				if (newRet-int32(a-byte('0')))/10 != ret {
-					if isPositiveNumber {
-						return math.MaxInt32
+			if ch >= byte('0') && ch <= byte('9') {
+				tail := int32(ch - byte('0'))
+				newRet := ret*10 + tail
+				if ret > (1<<31-1)/10 || (ret == (1<<31-1)/10 && tail > 7) {
+					if flag == byte('-') {
+						return -1 << 31
 					} else {
-						return math.MinInt32
+						return 1<<31 - 1
 					}
 				}
 				ret = newRet
@@ -73,10 +64,10 @@ func Atoi(str string) int32 {
 				break
 			}
 		}
+		flagChecked = true
 	}
-	if isPositiveNumber {
-		return ret
-	} else {
-		return -ret
+	if flag == byte('-') {
+		return int(-ret)
 	}
+	return int(ret)
 }
