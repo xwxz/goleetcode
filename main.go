@@ -57,7 +57,7 @@ func testReverseInteger() {
 	fmt.Println(algorithm.ReverseInteger(230))
 }
 
-func testAtoi()  {
+func testAtoi() {
 	fmt.Println(algorithm.Atoi("   -42"))
 	fmt.Println(algorithm.Atoi("4193 with words"))
 	fmt.Println(algorithm.Atoi("words and 987"))
@@ -75,6 +75,12 @@ func testAtoi()  {
 	fmt.Println(algorithm.Atoi("2147483648"))
 }
 
+func testPN() {
+	fmt.Println(algorithm.IsPalindromeNumber(-121))
+	fmt.Println(algorithm.IsPalindromeNumber(10))
+	fmt.Println(algorithm.IsPalindromeNumber(141))
+}
+
 func main() {
 	testTwoSum()
 	testAddTwoNumbers()
@@ -84,5 +90,5 @@ func main() {
 	testFindZigZagConversion()
 	testReverseInteger()
 	testAtoi()
+	testPN()
 }
-
