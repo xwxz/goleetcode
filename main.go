@@ -81,6 +81,12 @@ func testPN() {
 	fmt.Println(algorithm.IsPalindromeNumber(141))
 }
 
+func testMaxArea() {
+
+	area := algorithm.MaxArea([]int{1, 4, 7, 9, 2})
+	fmt.Printf("maxArea = %d", area)
+}
+
 func main() {
 	testTwoSum()
 	testAddTwoNumbers()
@@ -91,4 +97,5 @@ func main() {
 	testReverseInteger()
 	testAtoi()
 	testPN()
+	testMaxArea()
 }
