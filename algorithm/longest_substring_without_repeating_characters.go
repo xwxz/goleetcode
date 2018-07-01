@@ -1,9 +1,5 @@
 package algorithm
 
-import (
-	"math"
-)
-
 /**
  * 给定一个字符串，找出不含有重复字符的最长子串的长度。
  * 示例：
@@ -13,30 +9,26 @@ import (
  * 为了调试方便，这里顺带给出了最长子串
  * 此题解法是快慢指针，注意指针只能向前，不能回退
  */
-func LongestSubstringWithoutRepeatingCharacters(str string) (int, string) {
+func LongestSubstringWithoutRepeatingCharacters(str string) (int) {
 	if len(str) < 2 {
-		return len(str), str
+		return len(str)
 	}
 	var characterMap = make(map[byte]int)
 	var maxLength int
-	var maxLengthSubstring string
 	low := 0
 	high := 0
 	for ; high < len(str); high++ {
 		ch := str[high]
 		idx, ok := characterMap[ch]
-		if ok {
-			if low < idx {//保证指针只能向前
-				low = idx + 1
-			}
+		if ok && low <= idx {
+			low = idx + 1
 		} else {
 			currentLen := high - low + 1
 			if maxLength < currentLen {
-				maxLengthSubstring = str[low:high+1]
+				maxLength = currentLen
 			}
-			maxLength = int(math.Max(float64(maxLength), float64(currentLen)))
 		}
 		characterMap[ch] = high
 	}
-	return maxLength, maxLengthSubstring
+	return maxLength
 }

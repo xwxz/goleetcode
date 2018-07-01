@@ -9,8 +9,8 @@ import (
 
 func testTwoSum() {
 	arr := []int{1, 2, 3, 5}
-	x, y := algorithm.TwoSum(arr, 4)
-	fmt.Printf("%d,%d\n", x, y)
+	x := algorithm.TwoSum(arr, 4)
+	fmt.Printf("%v\n", x)
 }
 
 func testAddTwoNumbers() {
@@ -31,8 +31,8 @@ func testAddTwoNumbers() {
 }
 
 func testLSWRC() {
-	l, substring := algorithm.LongestSubstringWithoutRepeatingCharacters("Notethattheanswer")
-	fmt.Printf("%s:%d\n", substring, l)
+	l := algorithm.LongestSubstringWithoutRepeatingCharacters("aab")
+	fmt.Printf("%d\n", l)
 }
 
 func testFindMedian() {
@@ -88,9 +88,9 @@ func testMaxArea() {
 }
 
 func main() {
+	testLSWRC()
 	testTwoSum()
 	testAddTwoNumbers()
-	testLSWRC()
 	testFindMedian()
 	testFindLongetstPalindrom()
 	testFindZigZagConversion()
