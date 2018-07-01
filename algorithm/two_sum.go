@@ -9,15 +9,18 @@ package algorithm
  * 因为 nums[0] + nums[1] = 2 + 7 = 9
  * 所以返回 [0, 1]
  */
-func TwoSum(inputArr []int, target int) (int, int) {
+func TwoSum(nums []int, target int) []int {
 	var maps = make(map[int]int)
-	for i := 0; i < len(inputArr); i++ {
-		r := target - inputArr[i]
+	var ret = []int{0, 0}
+	for i := 0; i < len(nums); i++ {
+		r := target - nums[i]
 		if _, ok := maps[r]; ok {
-			return maps[r], i
+			ret[0] = maps[r]
+			ret[1] = i
+			return ret
 		}
-		num := inputArr[i]
+		num := nums[i]
 		maps[num] = i
 	}
-	return 0, 0
+	return ret
 }
