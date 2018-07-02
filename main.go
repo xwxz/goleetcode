@@ -87,6 +87,11 @@ func testMaxArea() {
 	fmt.Printf("maxArea = %d", area)
 }
 
+func testI2R() {
+	ret := algorithm.IntegerToRoman(1994)
+	fmt.Println(ret)
+}
+
 func main() {
 	testLSWRC()
 	testTwoSum()
@@ -98,4 +103,5 @@ func main() {
 	testAtoi()
 	testPN()
 	testMaxArea()
+	testI2R()
 }

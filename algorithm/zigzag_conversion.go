@@ -22,7 +22,7 @@ Output: "PINALSIGYAHRPI"
  */
 func ZigZagConversion(str string, rowNum int) string {
 	length := len(str)
-	if rowNum == length {
+	if rowNum == length || len(str) == 0 || rowNum > len(str) {
 		return str
 	}
 	var ret []byte
@@ -31,7 +31,7 @@ func ZigZagConversion(str string, rowNum int) string {
 	for i := 0; i < rowNum; i++ {
 		j := 1
 		ret = append(ret, str[i])
-		for {
+		for loc < length {
 			if i == 0 || i == rowNum-1 {
 				loc = i + j*(baseGap)
 				if loc < length {
